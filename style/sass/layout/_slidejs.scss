@@ -1,0 +1,103 @@
+/* Center the slideshow */
+.slide-container {
+  margin:0 auto;
+  position:relative;
+}
+
+.slidesjs-container {
+	overflow:visible;
+}
+
+/* Prevent the slideshow from flashing on load */
+.slides {
+	display: none;
+	overflow:hidden;
+	
+	transition:0.5s;
+	
+	a:hover {
+		margin:0;
+		border:0;
+		background-color:rgba(white, 0.2);
+		opacity:0.8;
+	}
+	
+}
+
+
+.slidesjs-pagination {
+  list-style: none;
+  margin:0 auto;
+  width:7 * 18px;
+  margin-top:-28px;
+  position:relative;
+  z-index:100;
+  bottom:10px;
+}
+
+.slidesjs-pagination-item {
+	a,
+	a:hover {
+		background-color:rgba(white, 0) !important;
+	}
+}
+
+.slidesjs-pagination li {
+  display:inline-block;
+  margin: 0 1px;
+}
+
+.slidesjs-pagination li a {
+  display:inline-block;
+  width: 13px;
+  height: 13px;
+  background-image: url(../img/pagination.png);
+  overflow: hidden;
+  margin:0;
+  padding:0;
+  border:0;
+  color:transparent;
+}
+
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+  background-position: 0 26px;
+}
+
+.slidesjs-pagination li a:hover {
+  background-position: 0 13px;
+}
+
+
+.slidesjs-previous {
+	left:4px;
+	width:64px;
+	height:64px;
+}
+
+.slidesjs-next {
+	right:4px;
+	width:64px;
+	height:64px;
+	background-position:-60px 0;
+}
+
+.slidesjs-navigation {
+	position:absolute;
+	z-index:100;
+	color:white;
+	top:calc(50% - 32px);
+	background-image:url("../img/slide-arrows.png");
+	background-size:128px;
+	background-repeat:no-repeat;
+	background-color:rgba(white, 0);
+	margin:0;
+	border:0;
+}
+
+
+
+
+
+
+
