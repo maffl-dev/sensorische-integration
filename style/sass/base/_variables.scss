@@ -1,8 +1,3 @@
-//$visual-grid: true;
-//$visual-grid-color: yellow;
-//$visual-grid-index: front;
-//$visual-grid-opacity: 0.1;
-
 $width:860px;
 $white:#fff;
 $red:#F55;
@@ -12,3 +7,18 @@ $yellow:#EDD86C;
 $green:#C1E0A3;
 $blu:#C3D6ED;
 $brown:#ECD0B9;
+
+// derived theme colors
+$accent:#4E7D32;                    // earthy green for links and highlights
+$cream:mix($yellow, $white, 12%);   // warm tint for the light sections
+$cream-dark:mix($yellow, $white, 20%);
+$line:rgba(#7A6A1E, 0.16);          // warm hairline instead of grey
+$text:#333;
+$text-muted:#6B6556;
+
+// spacing
+$gutter:48px;                        // outer padding of sections
+$circle:64px;                        // number circles
+$indent:$circle + 20px;              // text column next to the circles
+$section-gap:64px;                   // space between numbered sections
+$radius:6px;

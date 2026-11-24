@@ -1,298 +1,387 @@
+html {
+	scroll-behavior:smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior:auto;
+	}
+}
+
 html, body {
 	width:100%;
-	height:100%;
-	box-sizing:border-box;
+	min-height:100%;
 	background-color:$yellow;
 }
 
+body {
+	color:$text;
+}
+
+img {
+	height:auto;
+}
+
+h2, h3 {
+	font-weight:600;
+}
+
+h6 {
+	font-weight:700;
+}
+
+a:focus-visible,
+button:focus-visible {
+	outline:2px solid $accent;
+	outline-offset:2px;
+}
+
+
+// ---------------------------------------------------------------- header
+
 #titleContainer {
 	width:$width;
-	margin:0 auto;
-	margin-top:64px;
-	margin-bottom:24px;
-	position:relative;
-	
+	margin:56px auto 28px;
+
 	img {
+		display:block;
 		opacity:0.9;
 	}
 }
 
+
+// ---------------------------------------------------------------- card
+
 #container {
+	display:block;
 	width:$width;
-	margin:48px auto;
-	margin-top:0;
-	position:relative;
+	margin:0 auto 64px;
 	background-color:$white;
-	box-shadow:0 2px 4px rgba($black, 0.5);
-	
-	h1 {
-		text-align:center;
-		color:#555;
-		padding-bottom:1em;
+	border-radius:$radius;
+	overflow:hidden;
+	box-shadow:
+		0 1px 2px rgba(#5A4A00, 0.10),
+		0 10px 30px -8px rgba(#5A4A00, 0.28);
+}
+
+nav {
+	display:flex;
+	padding:0 ($gutter - 18px);
+	background:$white;
+	border-bottom:1px solid $line;
+
+	a, a:visited {
+		padding:18px 18px 15px;
+		color:$text-muted;
+		box-shadow:inset 0 -3px 0 transparent;
+		transition:color 0.15s, box-shadow 0.15s;
 	}
-	
-	nav {
-		background:rgba(white, 0.9);
-		border-bottom:1px solid rgba(black, 0.1);
-		
-		a, a:visited {
-			background:#fff;
-			display:inline-block;
-			padding:18px;
-			padding-bottom:14px;
-			margin-right:-5px;
-			text-align:center;
-		}
+
+	a:hover,
+	a:focus-visible {
+		color:$text;
+		box-shadow:inset 0 -3px 0 $yellow;
 	}
 }
 
 article {
-	padding:48px;
+	padding:$gutter;
 }
 
-%shadow1 {
-	box-shadow:0 2px 8px -3px rgba($black, 0.2);
-}
 
-%shadow2 {
-	box-shadow:0 -2px 8px -3px rgba($black, 0.2);
-}
-
-%shadow3 {
-	box-shadow:0 -2px 8px 3px rgba($black, 0.2);
-}
-
-%avatar {
-	border-radius: 50%;
-	border:3px solid white;
-	box-shadow:0 1px 4px rgba(#000, 0.4);
-}
-
+// ---------------------------------------------------------------- portfolio
 
 #portfolio {
-	@extend %shadow1;
-	@include outer-container;
-	background:rgba(black, 0.05);
-	
-	h1 {
-		width:80%;
-		margin:0 auto;
-	}
-	
-	h3,p,li {
-		opacity:0.85;
-	}
-	
+	display:flex;
+	gap:$gutter;
+	background:$cream;
+	color:lighten($text, 8%);
+
 	.pic {
-		@include span-columns(3);
+		flex:0 0 160px;
+
 		img {
-			@extend %avatar;
+			display:block;
 			width:160px;
 			height:160px;
+			border-radius:50%;
+			border:4px solid $white;
+			box-shadow:0 2px 10px rgba(#5A4A00, 0.25);
 		}
-		height:590px;
 	}
-	
-	.qualifications {
-		@include span-columns(4);
+
+	.qualification {
+		flex:1;
+		min-width:0;
+		padding-top:8px;
 	}
-	
+
+	h3 {
+		color:$text;
+	}
+
+	.role {
+		font-style:italic;
+		color:$text-muted;
+		margin:2px 0 0;
+	}
+
+	hr {
+		border-color:$line;
+		margin:20px 0;
+	}
+
+	h6 {
+		margin-bottom:4px;
+	}
+
 	ul {
-		margin-left:12px + 64px + 8px;
-		padding-left:2rem;
-		list-style-type:disc;
-		list-style-position:outside;
-		margin-bottom:0.5rem;
-		display:block;
-		
-		ul {
-			list-style-type: circle;
-		}
+		list-style:disc outside;
+		padding-left:1.15em;
 	}
-	
+
+	li {
+		line-height:1.45;
+	}
+
+	li + li {
+		margin-top:7px;
+	}
 }
+
+
+// ---------------------------------------------------------------- slideshow
+// see layout/_slideshow.scss
 
 #gallery {
-	background:rgba(black, 0.08);
-	padding:2px 0;
-	
-	.image-gallery {
-		width:$width - 8px;
-		margin:4px auto;
-		border:1px solid rgba(#555, 0.2);
-	}
+	padding:0;
 }
 
+
+// ---------------------------------------------------------------- numbered sections
 
 #info {
-	@extend %shadow2;
-	
-	h2 {
-		display:inline-block;
-		padding-left:12px;
-		margin-top:3rem;
+	padding-top:56px;
+	padding-bottom:56px;
+
+	section {
+		scroll-margin-top:16px;
 	}
-	
+
+	section + section {
+		margin-top:$section-gap;
+	}
+
+	.section-head {
+		display:flex;
+		align-items:center;
+		gap:$indent - $circle;
+		margin-bottom:12px;
+	}
+
+	.section-body {
+		margin-left:$indent;
+		max-width:560px;
+
+		> :last-child {
+			margin-bottom:0;
+		}
+	}
+
 	h6 {
-		line-height:$base-line-height;
-		margin-bottom:$base-font-size/2;
-		margin-top:$base-font-size;
+		margin:24px 0 6px;
 	}
-	
-	p, h6 {
-		margin-left:12px + 64px + 8px;
-		max-width:550px;
-	}
+
 	ul {
-		margin-left:12px + 64px + 8px;
-		padding-left:2rem;
-		list-style-type: disc;
-		margin-bottom:0.5rem;
+		list-style:disc outside;
+		padding-left:1.15em;
+		margin-bottom:0.8em;
 	}
-	
+
+	li {
+		line-height:1.45;
+	}
+
+	li + li {
+		margin-top:6px;
+	}
+
 	img#play {
 		display:block;
-		margin:$base-font-size * 2;
-		margin-left:12px + 64px + 8px;
-		border-radius:5px;
+		margin:28px 0;
+		border-radius:$radius;
 	}
 }
-
-
-#contact {
-	background:rgba(black, 0.08);
-	p, h3, a, a:visited {
-		margin-left:12px + 64px + 8px;
-		max-width:550px;
-	}
-	
-	h3 {
-		line-height:2em;
-	}
-	
-	.leftside {
-		display:inline-block;
-	}
-	
-	.quote {
-		width:50%;
-		display:inline-block;
-		font-size:19px;
-		font-style:italic;
-		margin-left:32px;
-		background-color:rgba($green, 0.5);
-		border-radius:3px;
-		padding:8px;
-		vertical-align:top;
-		margin-top:22px;
-	}
-	
-}
-
-footer {
-	text-align:center;
-	margin-bottom:2em;
-}
-
-
-
-
-
 
 .number-circle {
-	display:inline-block;
-    border-radius: 50%;
-
-    width:64px;
-    height:64px;
-    font-size:32px;
-	font-weight:500;
-	
-	padding:0;
-	padding-top:8px;
-	
-	background:#CCC;
-    color:$white;
-    text-align:center;
-	text-shadow:#aaa 1px 1px;
-	
+	flex:0 0 $circle;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	width:$circle;
+	height:$circle;
+	border-radius:50%;
+	font-size:30px;
+	font-weight:600;
+	line-height:1;
+	background:$yellow;
+	color:darken($yellow, 42%);
 }
 
+// one pastel per section, from the existing palette
+#info section:nth-of-type(2) .number-circle { background:$green; color:darken($green, 50%); }
+#info section:nth-of-type(3) .number-circle { background:$blu;   color:darken($blu, 50%); }
+#info section:nth-of-type(4) .number-circle { background:$brown; color:darken($brown, 48%); }
 
-.black_overlay{
-   display:none;
-   position:fixed;
-   top:0%;
-   left:0%;
-   width:100%;
-   height:100%;
-   background-color: $black;
-   z-index:1001;
-   opacity:0.8;
-}
 
-.white_content {
-   display:none;
-   position:fixed;
-   top: 25%;
-   left: 25%;
-   width: 50%;
-   min-width:400px;
-   padding: 48px;
-   z-index:1002;
-   overflow: auto;
-	background-color:darken($white, 10%);
-	box-shadow:0 2px 4px rgba($black, 0.5);
-	
+// ---------------------------------------------------------------- contact
+
+#contact {
+	display:flex;
+	align-items:flex-start;
+	gap:$gutter;
+	padding-left:$gutter + $indent;
+	background:$cream-dark;
+	border-top:1px solid $line;
+
+	.leftside {
+		flex:0 0 auto;
+	}
+
 	h3 {
-		margin-top:1rem;
+		font-size:20px;
+		margin-bottom:4px;
 	}
-	
-	#close {
-		position:absolute;
-		top:12px;
-		right:12px;
-		
-		a, a:visited {
-			color:$red;
+
+	p {
+		margin-bottom:0;
+	}
+
+	p + h3 {
+		margin-top:24px;
+	}
+
+	.impressum-link {
+		display:inline-block;
+		margin-top:24px;
+		font-size:14px;
+		color:$text-muted;
+
+		&:hover {
+			color:$accent;
 		}
-		
+	}
+
+	.quote {
+		flex:1;
+		max-width:400px;
+		margin:0;
+		padding:20px 24px;
+		border:0;
+		border-left:4px solid $green;
+		border-radius:$radius;
+		background:rgba($green, 0.4);
+		color:$text;
+
+		p {
+			font-size:19px;
+			font-style:italic;
+			line-height:1.5;
+		}
+
+		cite {
+			display:block;
+			margin-top:10px;
+			font-size:14px;
+			font-style:normal;
+			color:$text-muted;
+		}
 	}
 }
 
 
+// ---------------------------------------------------------------- impressum dialog
+
+#impressum {
+	width:calc(100% - 32px);
+	max-width:440px;
+	max-height:calc(100% - 32px);
+	padding:0;
+	border:0;
+	border-radius:$radius;
+	background:$white;
+	color:$text;
+	box-shadow:0 20px 50px rgba(#000, 0.3);
+
+	&::backdrop {
+		background:rgba(#2B2610, 0.6);
+	}
+
+	.dialog-inner {
+		position:relative;
+		padding:36px 40px;
+	}
+
+	h3 {
+		font-size:20px;
+		margin-bottom:6px;
+	}
+
+	ul + h3 {
+		margin-top:24px;
+	}
+
+	.dialog-close {
+		position:absolute;
+		top:14px;
+		right:16px;
+
+		button {
+			padding:6px 8px;
+			border:0;
+			background:none;
+			font:inherit;
+			font-size:14px;
+			color:$text-muted;
+			cursor:pointer;
+
+			&:hover {
+				color:$accent;
+			}
+		}
+	}
+}
 
 
+// ---------------------------------------------------------------- mobile
 
-
-
-
-
-
-// Mobile
 @include media($mobile) {
 	#titleContainer,
 	#container {
 		width:auto;
-		margin-left:0;
-		margin-right:0;
 	}
 
 	#titleContainer {
-		margin-top:24px;
+		margin:24px 0 20px;
 		padding:0 16px;
 	}
 
+	#container {
+		margin-bottom:0;
+		border-radius:0;
+	}
+
 	// menu as an even 3-column grid instead of wrapping links
-	#container nav {
+	nav {
 		display:grid;
 		grid-template-columns:repeat(3, 1fr);
+		padding:0;
 
 		a, a:visited {
-			margin-right:0;
-			padding:14px 4px 10px;
-			border-right:1px solid rgba(black, 0.1);
-			border-bottom:1px solid rgba(black, 0.1);
+			padding:14px 4px 11px;
+			text-align:center;
+			border-right:1px solid $line;
+			border-bottom:1px solid $line;
 
 			&:nth-child(3n) {
 				border-right:0;
@@ -304,59 +393,77 @@ footer {
 	}
 
 	article {
-		padding:24px 16px;
+		padding:32px 16px;
 	}
 
 	#portfolio {
+		flex-direction:column;
+		gap:20px;
+
 		.pic {
-			float:none;
-			width:auto;
-			height:auto;
-			margin:0 0 24px;
+			flex:none;
 		}
-		ul {
-			margin-left:0;
+
+		.pic img {
+			width:128px;
+			height:128px;
+		}
+
+		.qualification {
+			padding-top:0;
 		}
 	}
 
-	#gallery .image-gallery {
-		width:auto;
+	#gallery {
+		padding:0;
 	}
 
 	#info {
-		p, h6, ul, img#play {
+		padding-top:40px;
+		padding-bottom:40px;
+
+		section + section {
+			margin-top:48px;
+		}
+
+		.section-head {
+			gap:14px;
+		}
+
+		.section-body {
 			margin-left:0;
 		}
 
-		// keep long headings next to the number circle instead of wrapping below it
-		.number-circle,
 		h2 {
-			margin-top:3rem;
-			margin-bottom:1rem;
-			vertical-align:middle;
+			font-size:26px;
 		}
-		h2 {
-			max-width:calc(100% - 64px - 8px);
+
+		img#play {
+			margin:20px 0;
 		}
+	}
+
+	.number-circle {
+		flex-basis:48px;
+		width:48px;
+		height:48px;
+		font-size:24px;
 	}
 
 	#contact {
-		p, h3, a, a:visited {
-			margin-left:0;
-		}
+		flex-direction:column;
+		gap:28px;
+		padding-left:16px;
+
+		// quote first, so contact details and the Impressum link close the page
 		.quote {
-			display:block;
-			width:auto;
-			margin-left:0;
+			order:-1;
+			max-width:none;
+			align-self:stretch;
 		}
 	}
 
-	.white_content {
-		top:5%;
-		left:5%;
-		width:90%;
-		min-width:0;
-		max-height:90%;
-		padding:24px;
+	#impressum .dialog-inner {
+		padding:28px 24px;
 	}
 }

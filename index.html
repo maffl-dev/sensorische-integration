@@ -1,95 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Sensorische Integration mit Roswith Topf, Hainfeld Montessori Kinderhaus Hainfeld, Ramsauer Straße 13, Hainfeld">
+		<meta name="description" content="Sensorische Integration mit Roswitha Topf, Hainfeld Montessori Kinderhaus Hainfeld, Ramsauer Straße 13, Hainfeld">
+		<meta name="theme-color" content="#EDD86C">
 		<title>Sensorische Integration im Dialog nach Ulla Kiesling</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 		<link rel="stylesheet" href="style/css/main.css">
-		<link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="js/jquery.slides.min.js"></script>
-		<script src="js/lightbox.min.js"></script>
-		
-		<script>
-			$(function() {
-				$('.slides').slidesjs({
-					width: 852,
-					height: 400,
-					navigation: {
-						active: false
-					},
-					pagination: {
-						active:false
-					},
-					effect: {
-						slide: {
-							speed:1200
-						}
-					},
-					play: {
-				      active: false,
-				      effect: "slide",
-				      interval: 5000,
-				      auto: true,
-				      pauseOnHover: false,
-					  restartDelay: 2500
-				    }
-				});
-				
-				$(".slidesjs-container")[0].style.overflow = "visible";
-				
-				//$(".slidesjs-next")[0].addEventListener("click", OnNext);
-				//$(".slidesjs-previous")[0].addEventListener("click", OnPrevious);
-			});
-			
-			
-			var imgID = 1;
-			
-			function OnImageChange()
-			{
-				console.log(imgID);
-				var image = document.getElementsByName("img-" + imgID)[0];
-				$(".slides")[0].style.height = image.clientHeight + "px";
-			}
-			
-			function OnNext()
-			{
-				imgID += 1;
-				if (imgID > 5) imgID = 1;
-				OnImageChange()
-			}
-			
-			function OnPrevious()
-			{
-				imgID -= 1;
-				if (imgID < 1) imgID = 5;
-				OnImageChange()
-			}
-			
-			$(document).mouseup(function (e)
-			{
-			    var container = $(".white_content");
-
-			    if (!container.is(e.target) // if the target of the click isn't the container...
-			        && container.has(e.target).length === 0) // ... nor a descendant of the container
-			    {
-			        container.hide();
-					$(".black_overlay").hide();
-			    }
-			});
-			
-		</script>
+		<script src="js/main.js" defer></script>
 	</head>
 
 	<body>
-		<div id="titleContainer">
-			<img src="img/title.png" alt="Sensorische Integration im Dialog nach Ulla Kiesling" id="title">
-		</div>
-		
-		<div id="container">
+		<header id="titleContainer">
+			<img src="img/title.png" alt="Sensorische Integration im Dialog nach Ulla Kiesling" id="title" width="520" height="80">
+		</header>
+
+		<main id="container">
 			<nav>
 				<a href="#Was-ist-Sensorische-Integration">Was ist Si</a>
 				<a href="#Symptome">Symptome</a>
@@ -100,207 +29,209 @@
 
 			<article id="portfolio">
 				<div class="pic">
-					<img src="img/roswitha.jpg" alt="">
+					<img src="img/roswitha.jpg" alt="Roswitha Topf" width="160" height="160">
 				</div>
 				<div class="qualification">
+					<h3>Roswitha Topf</h3>
+					<p class="role">Diplomierte Montessoripädagogin</p>
+
+					<hr>
 					<ul>
-						<h3>Roswitha Topf</h3>
-						<p>
-							<i>Diplomierte Montessoripädagogin</i>
-						</p>
-						
-						<hr>
 						<li>Ausbildung zur Diplomierten Montessoripädagogin im Montessorizentrum in Wien 2005</li>
-						<li>Montessori-Zertifikatslehrgang für das Alter 0-3 jahre 2008</li>
+						<li>Montessori-Zertifikatslehrgang für das Alter 0-3 Jahre 2008</li>
 						<li>Zusatzqualifikation „<i>Sensorische Integration im Dialog” nach Ulla Kiesling</i> 2009</li>
 						<li>Zahlreiche Weiterbildungen im Montessorizentrum in Wien</li>
 						<li>Sensorische Integrationslehrgang mit Ute Jung 2013</li>
-						<hr>
+					</ul>
+					<hr>
+					<ul>
 						<li>Gründerin des Montessori Kinderhaus Hainfeld 2006</li>
 						<li>Gründerin der sensorischen Begleitung in Hainfeld 2009</li>
 						<li>Gründerin des Babytreff und der Spielgruppe im Montessori Kinderhaus Hainfeld 2015</li>
-						<hr>
-						Derzeit:
-							
+					</ul>
+					<hr>
+					<h6>Derzeit:</h6>
+					<ul>
 						<li>Gruppenleiterin der 0-3 jährigen Kinder</li>
 						<li>Leiterin des Babytreff und der Spielgruppe</li>
 						<li>Leiterin der <i>„Sensorische Integration im Dialog” nach Ulla Kiesling</i></li>
 					</ul>
 				</div>
 			</article>
-			
+
 			<article id="gallery">
-				<div class="image-gallery">
-					<div class="slide-container">
-					    <div class="slides">
-							<img src="img/1.jpg" name="img-1">
-							<img src="img/2.jpg" name="img-2">
-							<img src="img/3.jpg" name="img-3">
-							<img src="img/4.jpg" name="img-4">
-							<a href="#" class="slidesjs-previous slidesjs-navigation"></a>
-							<a href="#" class="slidesjs-next slidesjs-navigation"></a>
-					    </div>
-					</div>
+				<div class="slideshow" aria-roledescription="Karussell" aria-label="Bilder">
+					<img src="img/1.jpg" alt="Stark werden für das Leben" class="is-active" width="852" height="400">
+					<img src="img/2.jpg" alt="Vertrauen, zutrauen, wachsen können" width="852" height="400">
+					<img src="img/3.jpg" alt="Ich bin bei mir" width="852" height="400">
+					<img src="img/4.jpg" alt="Geborgenheit erfahren" width="852" height="400">
+					<button type="button" class="slideshow-prev" aria-label="Vorheriges Bild"></button>
+					<button type="button" class="slideshow-next" aria-label="Nächstes Bild"></button>
 				</div>
 			</article>
-			
+
 			<article id="info">
-				<div id="Was-ist-Sensorische-Integration"></div>
-				<div class="number-circle">
-					1
-				</div>
-				<h2>Was ist Sensorische Integration?</h2>
-				<p>
-					Dieser Begriff einer Behandlungsmethode für Kinder mit Lern- und Entwicklungsstörungen
-					wurde von <a href="http://de.wikipedia.org/wiki/Anna_Jean_Ayres" target="_blank">Dr. Jean Ayres</a> erstmals
-					1964 als "<a href="http://en.wikipedia.org/wiki/Sensory_integration_therapy" target="_blank">Sensory Integration Therapy</a>" in
-					Kalifornien - USA geprägt.
-				</p>
-				<p>
-					Sensorische Integration ist eine Stimulation der Basissinne.
-					Die Basissinne (Gleichgewichtssinn, Tiefenwahrnehmung und Wahrnehmung über die Haut) sind das
-					Fundament, die Wurzeln unserer gesamten Entwicklung. An diesem Fundament wird bereits in
-					der Schwangerschaft als erstes gebaut. Aufgrund unserer schnelllebigen Zeit und den
-					hohen Leistungsanforderungen der Gesellschaft, ist es besonders wichtig, 
-					für eine gute Basis zu sorgen. Durch unterschiedliche Faktoren benötigt diese Verwurzelung
-					bei vielen Kindern gezielte Unterstützung, um die Selbstregulation der Basissinne
-					ins Gleichgewicht zu bringen.
-				</p>
-				<p>
-					Für jede Handlung benötigen wir ein gutes Zusammenspiel der Sinneswahrnehmungen.
-					Erfolgt der Fluss der Empfindungen unorganisiert – d. h. Im Gehirn findet keine
-					entsprechende Verarbeitung statt – so kann keine zielgerichtete und geplante Handlung
-					auf die Umweltreize hervorgebracht werden.
-				</p>
-				
-				<div id="Symptome"></div>
-				<div class="number-circle">
-					2
-				</div>
-				<h2>Symptome</h2>
-				<p>
-					Häufig zeigen sie folgende typische Symptome:
-				</p>
-				<h6>Im Säuglingsalter</h6>
-				<ul>
-					<li>Saug- und Schluckprobleme in Kombination mit Säuglingskoliken</li>
-					<li>Übermäßige Unruhe mit Schreiattacken  oder                                                                           </li>
-					<li>Auffallend geringe Aktivität  mit langen Schlafperioden</li>
-					<li>Irritation/Abwehr auf Lageveränderungen</li>
-					<li>Irritation/Abwehr auf Berührung</li>
-				</ul>
-				<h6>Im Kleinkind- bzw. Schulalter</h6>
-				<ul>
-					<li>Nächtliches Einnässen</li>
-					<li>Verzögerte motorische Entwicklung</li>
-					<li>„tollpatschige“, „ungeschickte“ Kinder</li>
-					<li>Mangelndes Selbst- und Körperbewusstsein</li>
-					<li>Verzögerte Sprachentwicklung</li>
-					<li>Geräuschempfindlichkeiten</li>
-					<li>Verhaltens- und Stressauffälligkeiten</li>
-					<li>Anpassungsschwierigkeiten an neue Situationen</li>
-					<li>Hyper- oder Hypoaktivität</li>
-				</ul>
-				
-				<div id="Begleitung"></div>
-				<div class="number-circle">
-					3
-				</div>
-				<h2>Wie sieht die Begleitung aus?</h2>
-				<p>
-					Der Schwerpunkt liegt beim Stimulieren der Basissinne ( Haut, Gleichgewicht, Knochen und Muskeln) sie
-					sind die Grundlage jeder Wahrnehmung. Weiters gehen die Kinder in Entwicklungsstufen zurück die
-					noch nicht optimal abgeschlossen sind. Die Kinder holen sich ihren Bedarf an Reizen selbständig
-					durch verschiedene Materialien: unterschiedliche Schaukeln, Sandsäcke ,Creme, Matten,
-					Schlauch - Tunnel zum durch Krabbeln, Gebärmutterhöhle, ... Die Kinder erfahren sich ihre Reize
-					auch in der Natur zu holen (Sandkiste mit Lehmsand, Bäume zum klettern, Bachwanderungen, …).
-					So wird dem Kind eine Fülle an Sinneserfahrungen ermöglicht, die sie bei den begleitenden
-					Reizverarbeitungspausen sinnvoll miteinander zu verknüpfen lernen.
-				</p>
-				<img src="img/play.jpg" alt="Stimulieren der Basissinne" id="play">
-				<p>
-					Die SI – Begleitungseinheit  ist dem individuellen Entwicklungsstand angepasst und richtet sich
-					nach den Bedürfnissen des Kindes. Eine Einheit dauert 60 Minuten. Um den sozialen Bereich
-					zu stärken sind je nach Bedürfnissen des Kindes zwischen 1 und max. 4 Kinder anwesend. Vor der ersten
-					Sensorischen Integrationseinheit findet ein kennenlernen des Kindes mit beiden Elternteilen statt.
-					Anschließend werden wichtige Punkte und Vorgangsweisen nur mit den Eltern ohne Anwesenheit des Kindes
-					besprochen. Diese erste Begutachtung teilt sich folgendermaßen auf: 30 Minuten Beobachtung des Kindes
-					mit mindestens einen Elternteil anschließend  60 Minuten Entwicklungsgespräch ohne Kind und mit den Eltern.
-					Der weitere Kontakt mit den Eltern ist in der gesamten SI – Begleitung ein wichtiger Teil.
-					Beratungsgespräche für Hilfestellung im Alltag können in Anspruch genommen werden.
-				</p>
-				
-				<div id="Ziele"></div>
-				<div class="number-circle">
-					4
-				</div>
-				<h2>Ziele der SI Therapie</h2>
-				<p>
-					Das Ziel der Therapie ist eine gute Wahrnehmung und Verarbeitung der Eigen- und Tiefenwahrnehmung,
-					des Gleichgewichtes und der Berührung sowie eine Verknüpfung mit den anderen Sinnen.
-					Gezielte Reizangebote helfen dem Kind, aktiv zu handeln und zu erforschen, und somit kann beim
-					Gehirn eine Nachreifung stattfinden. Erfolgserlebnisse und eine Stärkung des Selbstbewusstsein
-					führen das Kind wieder körperlich und seelisch in seine Gleichgewicht  zurück, dahin wo
-					es sich wohl fühlt.  Dadurch wird sich auch sein Umfeld durch die positive Veränderung des Kindes verändern.
-				</p>
-				<p>
-					Die Eigenaktivität des Kindes helfen ihm seinen richtigen Weg zu finden,
-					die ihm die Tür zu weiteren Entwicklungsstufen öffnen.
-				</p>
-				<h6>Wichtige Ziele sind:</h6>
-				<ul>
-					<li>Aufbau des Körperbewusstsein</li>
-					<li>Handlungsplanung und Bewegungskoordination</li>
-					<li>Förderung der koordinativen und konditionellen Fähigkeiten  </li>
-					<li>Förderung der Sprachkompetenz und Kommunikationsfähigkeit</li>
-					<li>Selbstständigkeit</li>
-					<li>Förderung sozialer Kompetenz ( Umgang mit anderen, Durchsetztungsvermögen, Steigerung der Frustrationsgrenze,..)</li>
-					<li>Urvertrauen in die Welt wird aufgebaut</li>
-					<li>Körper, Geist und Seele finden wieder zusammen</li>
-				</ul>
-				
+				<section id="Was-ist-Sensorische-Integration">
+					<header class="section-head">
+						<span class="number-circle">1</span>
+						<h2>Was ist Sensorische Integration?</h2>
+					</header>
+					<div class="section-body">
+						<p>
+							Dieser Begriff einer Behandlungsmethode für Kinder mit Lern- und Entwicklungsstörungen
+							wurde von <a href="https://de.wikipedia.org/wiki/Anna_Jean_Ayres" target="_blank" rel="noopener">Dr. Jean Ayres</a> erstmals
+							1964 als "<a href="https://en.wikipedia.org/wiki/Sensory_integration_therapy" target="_blank" rel="noopener">Sensory Integration Therapy</a>" in
+							Kalifornien - USA geprägt.
+						</p>
+						<p>
+							Sensorische Integration ist eine Stimulation der Basissinne.
+							Die Basissinne (Gleichgewichtssinn, Tiefenwahrnehmung und Wahrnehmung über die Haut) sind das
+							Fundament, die Wurzeln unserer gesamten Entwicklung. An diesem Fundament wird bereits in
+							der Schwangerschaft als erstes gebaut. Aufgrund unserer schnelllebigen Zeit und den
+							hohen Leistungsanforderungen der Gesellschaft, ist es besonders wichtig,
+							für eine gute Basis zu sorgen. Durch unterschiedliche Faktoren benötigt diese Verwurzelung
+							bei vielen Kindern gezielte Unterstützung, um die Selbstregulation der Basissinne
+							ins Gleichgewicht zu bringen.
+						</p>
+						<p>
+							Für jede Handlung benötigen wir ein gutes Zusammenspiel der Sinneswahrnehmungen.
+							Erfolgt der Fluss der Empfindungen unorganisiert – d. h. Im Gehirn findet keine
+							entsprechende Verarbeitung statt – so kann keine zielgerichtete und geplante Handlung
+							auf die Umweltreize hervorgebracht werden.
+						</p>
+					</div>
+				</section>
+
+				<section id="Symptome">
+					<header class="section-head">
+						<span class="number-circle">2</span>
+						<h2>Symptome</h2>
+					</header>
+					<div class="section-body">
+						<p>
+							Häufig zeigen sie folgende typische Symptome:
+						</p>
+						<h6>Im Säuglingsalter</h6>
+						<ul>
+							<li>Saug- und Schluckprobleme in Kombination mit Säuglingskoliken</li>
+							<li>Übermäßige Unruhe mit Schreiattacken oder</li>
+							<li>Auffallend geringe Aktivität mit langen Schlafperioden</li>
+							<li>Irritation/Abwehr auf Lageveränderungen</li>
+							<li>Irritation/Abwehr auf Berührung</li>
+						</ul>
+						<h6>Im Kleinkind- bzw. Schulalter</h6>
+						<ul>
+							<li>Nächtliches Einnässen</li>
+							<li>Verzögerte motorische Entwicklung</li>
+							<li>„tollpatschige“, „ungeschickte“ Kinder</li>
+							<li>Mangelndes Selbst- und Körperbewusstsein</li>
+							<li>Verzögerte Sprachentwicklung</li>
+							<li>Geräuschempfindlichkeiten</li>
+							<li>Verhaltens- und Stressauffälligkeiten</li>
+							<li>Anpassungsschwierigkeiten an neue Situationen</li>
+							<li>Hyper- oder Hypoaktivität</li>
+						</ul>
+					</div>
+				</section>
+
+				<section id="Begleitung">
+					<header class="section-head">
+						<span class="number-circle">3</span>
+						<h2>Wie sieht die Begleitung aus?</h2>
+					</header>
+					<div class="section-body">
+						<p>
+							Der Schwerpunkt liegt beim Stimulieren der Basissinne ( Haut, Gleichgewicht, Knochen und Muskeln) sie
+							sind die Grundlage jeder Wahrnehmung. Weiters gehen die Kinder in Entwicklungsstufen zurück die
+							noch nicht optimal abgeschlossen sind. Die Kinder holen sich ihren Bedarf an Reizen selbständig
+							durch verschiedene Materialien: unterschiedliche Schaukeln, Sandsäcke ,Creme, Matten,
+							Schlauch - Tunnel zum durch Krabbeln, Gebärmutterhöhle, ... Die Kinder erfahren sich ihre Reize
+							auch in der Natur zu holen (Sandkiste mit Lehmsand, Bäume zum klettern, Bachwanderungen, …).
+							So wird dem Kind eine Fülle an Sinneserfahrungen ermöglicht, die sie bei den begleitenden
+							Reizverarbeitungspausen sinnvoll miteinander zu verknüpfen lernen.
+						</p>
+						<img src="img/play.jpg" alt="Stimulieren der Basissinne" id="play" width="450" height="421" loading="lazy">
+						<p>
+							Die SI – Begleitungseinheit ist dem individuellen Entwicklungsstand angepasst und richtet sich
+							nach den Bedürfnissen des Kindes. Eine Einheit dauert 60 Minuten. Um den sozialen Bereich
+							zu stärken sind je nach Bedürfnissen des Kindes zwischen 1 und max. 4 Kinder anwesend. Vor der ersten
+							Sensorischen Integrationseinheit findet ein kennenlernen des Kindes mit beiden Elternteilen statt.
+							Anschließend werden wichtige Punkte und Vorgangsweisen nur mit den Eltern ohne Anwesenheit des Kindes
+							besprochen. Diese erste Begutachtung teilt sich folgendermaßen auf: 30 Minuten Beobachtung des Kindes
+							mit mindestens einem Elternteil anschließend 60 Minuten Entwicklungsgespräch ohne Kind und mit den Eltern.
+							Der weitere Kontakt mit den Eltern ist in der gesamten SI – Begleitung ein wichtiger Teil.
+							Beratungsgespräche für Hilfestellung im Alltag können in Anspruch genommen werden.
+						</p>
+					</div>
+				</section>
+
+				<section id="Ziele">
+					<header class="section-head">
+						<span class="number-circle">4</span>
+						<h2>Ziele der SI Therapie</h2>
+					</header>
+					<div class="section-body">
+						<p>
+							Das Ziel der Therapie ist eine gute Wahrnehmung und Verarbeitung der Eigen- und Tiefenwahrnehmung,
+							des Gleichgewichtes und der Berührung sowie eine Verknüpfung mit den anderen Sinnen.
+							Gezielte Reizangebote helfen dem Kind, aktiv zu handeln und zu erforschen, und somit kann beim
+							Gehirn eine Nachreifung stattfinden. Erfolgserlebnisse und eine Stärkung des Selbstbewusstseins
+							führen das Kind wieder körperlich und seelisch in sein Gleichgewicht zurück, dahin wo
+							es sich wohl fühlt. Dadurch wird sich auch sein Umfeld durch die positive Veränderung des Kindes verändern.
+						</p>
+						<p>
+							Die Eigenaktivität des Kindes hilft ihm seinen richtigen Weg zu finden,
+							die ihm die Tür zu weiteren Entwicklungsstufen öffnen.
+						</p>
+						<h6>Wichtige Ziele sind:</h6>
+						<ul>
+							<li>Aufbau des Körperbewusstseins</li>
+							<li>Handlungsplanung und Bewegungskoordination</li>
+							<li>Förderung der koordinativen und konditionellen Fähigkeiten</li>
+							<li>Förderung der Sprachkompetenz und Kommunikationsfähigkeit</li>
+							<li>Selbstständigkeit</li>
+							<li>Förderung sozialer Kompetenz ( Umgang mit anderen, Durchsetzungsvermögen, Steigerung der Frustrationsgrenze,..)</li>
+							<li>Urvertrauen in die Welt wird aufgebaut</li>
+							<li>Körper, Geist und Seele finden wieder zusammen</li>
+						</ul>
+					</div>
+				</section>
 			</article>
-			
+
 			<article id="contact">
 				<div class="leftside">
 					<h3>Kontakt</h3>
 					<p>
 						Roswitha Topf<br>
-						Tel.: 0664 / 22 20 672
+						Tel.: <a href="tel:+436642220672">0664 / 22 20 672</a>
 					</p>
 					<h3>SI Raum</h3>
 					<p>
 						Ramsauer Straße 13<br>
 						3170 Hainfeld
 					</p>
-					<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Impressum</a>
+					<a href="#impressum" class="impressum-link">Impressum</a>
 				</div>
-				<div class="quote">
-					„Das Interesse des Kindes hängt (…) von der Möglichkeit ab, eigene Entdeckungen zu machen.“<br>
-					 (Maria Montessori)
-				</div>
+				<blockquote class="quote">
+					<p>„Das Interesse des Kindes hängt (…) von der Möglichkeit ab, eigene Entdeckungen zu machen.“</p>
+					<cite>Maria Montessori</cite>
+				</blockquote>
 			</article>
-		</div>
-		
-		<footer>
-		</footer>
-				
-		<div id="fade" class="black_overlay"></div>
-		<div id="light" class="white_content">
-			<h3>Impressum</h3>
+		</main>
+
+		<dialog id="impressum" aria-labelledby="impressum-title">
+			<div class="dialog-inner">
+			<form method="dialog" class="dialog-close">
+				<button type="submit">Schließen</button>
+			</form>
+			<h3 id="impressum-title">Impressum</h3>
 			<ul>
 				<li>Roswitha Topf</li>
 				<li>Schloßstraße 52</li>
 				<li>3163 Rohrbach an der Gölsen</li>
 				<li>Tel.: 0664 / 22 20 672</li>
 			</ul>
-			<div id="close">
-				<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">
-					Schließen
-				</a>
 			</div>
-		</div>
-		</div>
-		
+		</dialog>
 	</body>
 </html>
