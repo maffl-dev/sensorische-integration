@@ -561,6 +561,7 @@ ol {
   margin: 0;
   padding: 0;
   list-style-type: none; }
+
 dl {
   margin-bottom: 0.725em; }
   dl dt {
@@ -847,7 +848,7 @@ article {
     margin-left: 84px;
     padding-left: 2rem;
     list-style-type: disc;
-    list-style-position: inside;
+    list-style-position: outside;
     margin-bottom: 0.5rem;
     display: block; }
     #portfolio ul ul {
@@ -865,18 +866,22 @@ article {
   display: inline-block;
   padding-left: 12px;
   margin-top: 3rem; }
+
 #info h6 {
   line-height: 1.45;
   margin-bottom: 8px;
   margin-top: 16px; }
+
 #info p, #info h6 {
   margin-left: 84px;
   max-width: 550px; }
+
 #info ul {
   margin-left: 84px;
   padding-left: 2rem;
   list-style-type: disc;
   margin-bottom: 0.5rem; }
+
 #info img#play {
   display: block;
   margin: 32px;
@@ -953,6 +958,61 @@ footer {
     right: 12px; }
     .white_content #close a, .white_content #close a:visited {
       color: #F55; }
+
+@media screen and (max-width: 700px) {
+  #titleContainer,
+  #container {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0; }
+  #titleContainer {
+    margin-top: 24px;
+    padding: 0 16px; }
+  #container nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); }
+    #container nav a, #container nav a:visited {
+      margin-right: 0;
+      padding: 14px 4px 10px;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      #container nav a:nth-child(3n), #container nav a:visited:nth-child(3n) {
+        border-right: 0; }
+      #container nav a:nth-child(n+4), #container nav a:visited:nth-child(n+4) {
+        border-bottom: 0; }
+  article {
+    padding: 24px 16px; }
+  #portfolio .pic {
+    float: none;
+    width: auto;
+    height: auto;
+    margin: 0 0 24px; }
+  #portfolio ul {
+    margin-left: 0; }
+  #gallery .image-gallery {
+    width: auto; }
+  #info p, #info h6, #info ul, #info img#play {
+    margin-left: 0; }
+  #info .number-circle,
+  #info h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    vertical-align: middle; }
+  #info h2 {
+    max-width: calc(100% - 64px - 8px); }
+  #contact p, #contact h3, #contact a, #contact a:visited {
+    margin-left: 0; }
+  #contact .quote {
+    display: block;
+    width: auto;
+    margin-left: 0; }
+  .white_content {
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    min-width: 0;
+    max-height: 90%;
+    padding: 24px; } }
 
 /* Center the slideshow */
 .slide-container {

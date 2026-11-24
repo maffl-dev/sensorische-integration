@@ -101,7 +101,7 @@ article {
 		margin-left:12px + 64px + 8px;
 		padding-left:2rem;
 		list-style-type:disc;
-		list-style-position:inside;
+		list-style-position:outside;
 		margin-bottom:0.5rem;
 		display:block;
 		
@@ -267,3 +267,96 @@ footer {
 
 
 
+
+
+// Mobile
+@include media($mobile) {
+	#titleContainer,
+	#container {
+		width:auto;
+		margin-left:0;
+		margin-right:0;
+	}
+
+	#titleContainer {
+		margin-top:24px;
+		padding:0 16px;
+	}
+
+	// menu as an even 3-column grid instead of wrapping links
+	#container nav {
+		display:grid;
+		grid-template-columns:repeat(3, 1fr);
+
+		a, a:visited {
+			margin-right:0;
+			padding:14px 4px 10px;
+			border-right:1px solid rgba(black, 0.1);
+			border-bottom:1px solid rgba(black, 0.1);
+
+			&:nth-child(3n) {
+				border-right:0;
+			}
+			&:nth-child(n+4) {
+				border-bottom:0;
+			}
+		}
+	}
+
+	article {
+		padding:24px 16px;
+	}
+
+	#portfolio {
+		.pic {
+			float:none;
+			width:auto;
+			height:auto;
+			margin:0 0 24px;
+		}
+		ul {
+			margin-left:0;
+		}
+	}
+
+	#gallery .image-gallery {
+		width:auto;
+	}
+
+	#info {
+		p, h6, ul, img#play {
+			margin-left:0;
+		}
+
+		// keep long headings next to the number circle instead of wrapping below it
+		.number-circle,
+		h2 {
+			margin-top:3rem;
+			margin-bottom:1rem;
+			vertical-align:middle;
+		}
+		h2 {
+			max-width:calc(100% - 64px - 8px);
+		}
+	}
+
+	#contact {
+		p, h3, a, a:visited {
+			margin-left:0;
+		}
+		.quote {
+			display:block;
+			width:auto;
+			margin-left:0;
+		}
+	}
+
+	.white_content {
+		top:5%;
+		left:5%;
+		width:90%;
+		min-width:0;
+		max-height:90%;
+		padding:24px;
+	}
+}
